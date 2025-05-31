@@ -64,11 +64,15 @@ export default {
 				},
 				prenova: {
 					pink: '#fb6fa9'
-				}
+				},
+				// Flutter pinkAccent equivalent colors
+				'prenova-pink': 'hsl(323 100% 75%)',
+				'prenova-pink-light': 'hsl(323 100% 85%)',
+				'prenova-pink-dark': 'hsl(323 100% 65%)',
 			},
 			backgroundImage: {
-				'prenova-gradient': 'linear-gradient(135deg, #fb6fa9 0%, #fb6fa9 100%)',
-				'prenova-gradient-soft': 'linear-gradient(135deg, rgba(251, 111, 169, 0.1) 0%, rgba(251, 111, 169, 0.05) 100%)'
+				'prenova-gradient': 'linear-gradient(135deg, hsl(323 100% 75%) 0%, hsl(323 100% 65%) 100%)',
+				'prenova-gradient-soft': 'linear-gradient(135deg, hsl(24 50% 97%) 0%, hsl(323 100% 95%) 100%)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

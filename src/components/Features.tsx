@@ -6,7 +6,7 @@ export const Features = () => {
   const features = [
     {
       icon: '🤖',
-      title: 'AI Chatbot',
+      title: 'NOVA',
       description: 'Intelligent assistant for pregnancy-related queries and personalized guidance.'
     },
     {
@@ -46,7 +46,7 @@ export const Features = () => {
     },
     {
       icon: '📅',
-      title: 'Appointment Scheduling',
+      title: 'Smart Med Tracker',
       description: 'Manage medical appointments with smart reminders and notifications.'
     }
   ];

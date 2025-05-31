@@ -13,42 +13,43 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Updated to Flutter pinkAccent colors */
+    --primary: 323 100% 75%; /* Flutter pinkAccent */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 24 100% 92%; /* Soft peach */
+    --secondary-foreground: 323 100% 25%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 24 20% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 323 20% 95%;
+    --accent-foreground: 323 100% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 323 15% 92%;
+    --input: 323 15% 92%;
+    --ring: 323 100% 75%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Updated maternal care colors to Flutter pinkAccent */
+    --maternal-pink: 323 100% 75%;
+    --maternal-peach: 24 100% 85%;
+    --maternal-cream: 24 50% 97%;
+    --maternal-sage: 120 20% 85%;
+    --maternal-lavender: 260 30% 90%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-primary: 323 100% 75%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 323 20% 95%;
+    --sidebar-accent-foreground: 323 100% 25%;
+    --sidebar-border: 323 15% 92%;
+    --sidebar-ring: 323 100% 75%;
   }
 
   .dark {
@@ -61,8 +62,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 323 100% 75%;
+    --primary-foreground: 222.2 84% 4.9%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -78,15 +79,22 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 323 100% 75%;
+
+    --maternal-pink: 323 100% 75%;
+    --maternal-peach: 24 50% 25%;
+    --maternal-cream: 24 20% 15%;
+    --maternal-sage: 120 20% 25%;
+    --maternal-lavender: 260 30% 25%;
+
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 323 100% 75%;
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 323 100% 75%;
   }
 }
 
@@ -94,8 +102,175 @@
   * {
     @apply border-border;
   }
-
+  
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Updated maternal care gradients to Flutter pinkAccent */
+  .maternal-gradient {
+    background: linear-gradient(135deg, hsl(323 100% 75%) 0%, hsl(var(--maternal-peach)) 100%);
+  }
+
+  .maternal-gradient-soft {
+    background: linear-gradient(135deg, hsl(var(--maternal-cream)) 0%, hsl(323 100% 95%) 100%);
+  }
+
+  .maternal-gradient-hero {
+    background: linear-gradient(135deg, hsl(323 100% 75% / 0.1) 0%, hsl(var(--maternal-lavender) / 0.1) 100%);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  .focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Custom animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Improved typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Enhanced button styles with Flutter pinkAccent */
+  .btn-maternal {
+    background: linear-gradient(135deg, hsl(323 100% 75%) 0%, hsl(323 100% 65%) 100%);
+    @apply text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+
+  .btn-maternal-outline {
+    @apply border-2 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+    border-color: hsl(323 100% 75%);
+    color: hsl(323 100% 75%);
+  }
+
+  .btn-maternal-outline:hover {
+    background-color: hsl(323 100% 95%);
+  }
+
+  /* Card enhancements */
+  .card-maternal {
+    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6;
+    border: 1px solid hsl(323 100% 85%);
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/20 backdrop-blur-md border border-white/30;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+}
+
+@layer components {
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted rounded-lg;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(323 100% 75% / 0.5);
+    @apply rounded-lg;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(323 100% 75% / 0.7);
+  }
+
+  /* Floating action styles */
+  .floating-nav {
+    @apply fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 shadow-lg;
+  }
+
+  /* Testimonial card styles */
+  .testimonial-card {
+    background: linear-gradient(135deg, white 0%, hsl(323 100% 98%) 100%);
+    border: 1px solid hsl(323 100% 85%);
+    @apply rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Feature card styles */
+  .feature-card {
+    @apply group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100;
+  }
+
+  .feature-card:hover {
+    border-color: hsl(323 100% 85%);
+  }
+
+  .feature-icon {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300;
+    background: linear-gradient(135deg, hsl(323 100% 75%) 0%, hsl(323 100% 65%) 100%);
   }
 }

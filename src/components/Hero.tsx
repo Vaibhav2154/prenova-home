@@ -22,16 +22,13 @@ export const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <div className="mb-8">
-            <span className="inline-block px-4 py-2 bg-prenova-pink text-white rounded-full text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-2 bg-prenova-pink italic text-white rounded-full text-sm font-medium mb-4">
               🤱 Your Pregnancy Companion
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-prenova-pink mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl  font-bold italic text-prenova-pink mb-6 leading-tight">
             Prenova
-            {/* <span className="block bg-prenova-gradient bg-clip-text text-transparent">
-              Prenatal Pulse
-            </span> */}
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">

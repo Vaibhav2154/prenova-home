@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -18,12 +17,10 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center ">
-            <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
-            <img src="/logo.png" alt="logo"/>
+          <div className="flex items-center">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-lg flex items-center justify-center">
+              <img src="/logo.png" alt="logo" className="w-8 h-8 sm:w-12 sm:h-12" />
             </div>
-
-            <span className="text-xl font-bold text-prenova-pink">Prenova</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -52,24 +49,32 @@ export const Navigation = () => {
             >
               Download
             </button>
-            <Button 
-              onClick={() => scrollToSection('download')}
-              className="bg-prenova-pink hover:bg-prenova-pink/90 text-white"
-            >
-              Get Started
-            </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile and Desktop Actions */}
+          <div className="flex items-center space-x-4">
+            {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-prenova-pink hover:text-prenova-pink/70"
+              className="md:hidden text-prenova-pink hover:text-prenova-pink/70 p-2"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
+
+            {/* Get Started Button */}
+            <Button
+              onClick={() => scrollToSection('download')}
+              className="bg-prenova-pink hover:bg-prenova-pink/90 text-white text-sm px-3 py-2 sm:px-4 sm:py-2"
+            >
+              <span className="hidden sm:inline">Get Started</span>
+              <span className="sm:hidden">Start</span>
+            </Button>
           </div>
         </div>
 
@@ -79,25 +84,25 @@ export const Navigation = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <button
                 onClick={() => scrollToSection('home')}
-                className="block px-3 py-2 text-prenova-pink hover:text-prenova-pink/70"
+                className="block w-full text-left px-3 py-2 text-prenova-pink hover:text-prenova-pink/70 hover:bg-gray-50 rounded-md"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="block px-3 py-2 text-prenova-pink hover:text-prenova-pink/70"
+                className="block w-full text-left px-3 py-2 text-prenova-pink hover:text-prenova-pink/70 hover:bg-gray-50 rounded-md"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection('features')}
-                className="block px-3 py-2 text-prenova-pink hover:text-prenova-pink/70"
+                className="block w-full text-left px-3 py-2 text-prenova-pink hover:text-prenova-pink/70 hover:bg-gray-50 rounded-md"
               >
                 Features
               </button>
               <button
                 onClick={() => scrollToSection('download')}
-                className="block px-3 py-2 text-prenova-pink hover:text-prenova-pink/70"
+                className="block w-full text-left px-3 py-2 text-prenova-pink hover:text-prenova-pink/70 hover:bg-gray-50 rounded-md"
               >
                 Download
               </button>
